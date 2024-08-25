@@ -1,0 +1,47 @@
+h1{
+    font-size: 4em;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 40px auto;
+    text-align: center;
+    color: rgb(47, 47, 47);
+}   
+
+body{
+    background-color: #fedaba;
+}
+
+.chessboard-container{
+    width: 80vh;
+    height: 80vh;
+    background-color: white;
+    margin: auto;
+    box-shadow: 0px 0px 20px -5px grey;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-auto-flow: column;
+}
+
+.chessboard-container div{
+    min-width: 5px;
+    min-height: 5px;
+    outline:red 0 solid;
+   
+}
+
+
+.black{
+    background-color: gray;
+}
+
+.chessboard-container div i{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px red solid;
+
+  
+}

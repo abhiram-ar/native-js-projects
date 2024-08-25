@@ -1,0 +1,84 @@
+*{
+    font-family: cursive;
+}
+
+
+body{
+    background-color: #f1f1f1;
+}
+
+h1{
+    font-family: cursive;
+    text-align: center;
+    margin: 2em;
+}
+
+.notes-container{
+    height: 50vh;
+    width: 60vw;
+    margin: auto;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 2em;
+    justify-content: center;
+}
+
+.note{
+    height: 200px;
+    width: 250px;
+    padding:  0.1em 0.8em ;
+    background-color: #fef8e0;
+    box-shadow: 1px 1px 5px 1px rgb(169, 169, 169);
+    border-radius: 5px;
+    position: relative;
+
+}
+
+.note button{
+    background-color: rgb(255, 94, 66);
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    border: none;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    
+}
+
+
+.create-note{
+    background-color: #ffffc1;
+    width: 400px;
+    height: 150px;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 1px rgb(169, 169, 169);
+    margin: 1em auto;
+    position: relative;
+}
+
+.create-note textarea{
+    border: none;
+    background-color:  #ffffc1;
+    resize: none;
+    height: 130px;
+    width: 350px;
+}
+.create-note textarea:focus{outline: none;}
+
+.create-note #addnote{
+    color: green;
+    font-size: 2em;
+    border: none;
+    padding: 0px;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    background-color:  #ffffc1;
+}
+
+.create-note #addnote:active{
+    color:  #f69e39;
+}
