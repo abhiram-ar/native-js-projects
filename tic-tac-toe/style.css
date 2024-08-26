@@ -23,13 +23,28 @@ h1{
 
 .box{
     
-    background-color: yellow;
+    background-color: rgba(255, 255, 145, 0.225);
     border: 5px black solid;
     text-align: center;
     font-weight: 900;
     font-family: monospace;
     font-size: 5em;
-    padding-top: 20%;
+}
+
+.winning-move{
+    background-color: greenyellow;
+}
+
+
+#result{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.hidden{
+    display:none;
 }
 
 
@@ -38,7 +53,10 @@ h1{
     display: block;
     margin:5vh auto;
     background-color: #4caf4e;
-    padding: 1em 3em;
+    padding: 1.2em 3em;
     font-size: 1em;
     font-weight: bold;
+    border: none;
+    border-radius: 0.5em;
+    color: white;
 }
