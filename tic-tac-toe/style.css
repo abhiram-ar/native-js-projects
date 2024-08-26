@@ -12,8 +12,8 @@ h1{
 }
 
 #game-container{
-    height: 50vh;
-    width: 50vh;
+    height: 25em;
+    width: 25em;
     margin: auto;
     display: grid;
     grid-template-rows: repeat(3,1fr);
@@ -25,10 +25,13 @@ h1{
     
     background-color: rgba(255, 255, 145, 0.225);
     border: 5px black solid;
+    display: flex;
     text-align: center;
+    justify-content: space-around;
+    align-items: center;
     font-weight: 900;
     font-family: monospace;
-    font-size: 5em;
+    font-size: 5rem;
 }
 
 .winning-move{

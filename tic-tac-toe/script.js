@@ -39,6 +39,11 @@ function switchPlayer(){
 
 function handleClick(event){
     if(event.target !== container){
+
+        //clicking the same element again bug fix
+        if(event.target.innerText !== "") return
+
+
         totalClick++
 
         //change innertext of clicked element
@@ -46,7 +51,7 @@ function handleClick(event){
         
         //update the Game sate
         let index = Number(event.target.dataset.index)
-        gameState[index] = player
+        gameState[index] = player;
         
 
         checkWinningCondition()
