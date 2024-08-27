@@ -77,17 +77,16 @@ function checkWinningCondition(){
             }
 
             container.removeEventListener("click", handleClick)
-            break;
+            return;
         }
-        else{
-            if(totalClick >=9){
-                result.innerText = `The Game is draw!`;
-                result.classList.remove("hidden")
+        
+    }
 
-                container.removeEventListener("click", handleClick)
-                break;
-            }
-        }
+    if(totalClick >= 9){
+        result.innerText = `The Game is draw!`;
+        result.classList.remove("hidden")
+
+        container.removeEventListener("click", handleClick)
     }
 }
 
