@@ -1,0 +1,76 @@
+.game{
+    width: 50em;
+    margin:5em auto;
+    padding: 1em;
+    box-shadow: 0px 0px 6px rgb(211, 211, 211);
+    border-radius: 1em;
+}
+
+h2{
+
+    font-family: sans-serif;
+    font-size: 2em;
+    text-align: center;
+    margin: 1em auto ;
+}
+
+#game-box-container{
+    width: 30em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+
+.row{
+    width: 30em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+
+}
+
+
+.box{
+    height:5rem;
+    width: 5rem;
+    background-color: whitesmoke;
+    box-shadow:  0px 0px 1px 2px rgb(211, 211, 211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.letter-in-not-in-word{
+    background-color: grey;
+    color: white;
+}
+
+.letter-in-word{
+    background-color: yellow;
+}
+
+.letter-in-correct-position{
+    background-color: green;
+    color: whitesmoke;
+}
+
+input, button{
+    display: block;
+    margin:2em auto 1em;
+    
+}
+
+input{
+    padding: 1em 2em;
+    font-size: 1em;
+}
+
+button{
+    padding: 0.5em 2em;
+    margin-top: 1.1em;
+}
