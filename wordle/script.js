@@ -54,20 +54,25 @@ const words = [
 const gameBox = document.getElementById("game-box-container");
 const guess = document.getElementById("guess");
 const submitBtn = document.getElementById("submit");
+const result = document.getElementById("result");
 
 function getRandomWord(){
     let randomIndex = Math.floor(Math.random()*600)
     return words[randomIndex]
 }
 
-let curretWord = getRandomWord();
-console.log(curretWord);
-let guessCount = 0;
 
-submitBtn.addEventListener("click", ()=>{
+function handleSubmit(){
     let guessedWord = guess.value
+    if(guessedWord.length < 5){
+        alert("Please submit a word of length 5!!");
+        return;
+    }
+
+    guessCount++;
+    
     let matchedLetters = 0;
-    let row = guessCount;
+    let row = guessCount-1;
     
     guess.value = ""
 
@@ -91,9 +96,31 @@ submitBtn.addEventListener("click", ()=>{
     }
 
 
-    if(matchedLetters == 5){
-        console.log("you won")
+    if(matchedLetters === 5){
+        resultMessage = "Congratulations! You guessed the word!" ;
+        gameOver(resultMessage);
+        return
     }
 
-    guessCount++;
-})
+    if (guessCount >= 6){
+        resultMessage = "Game over! The word was " + curretWord ;
+        gameOver(resultMessage);
+    } 
+
+}
+
+
+function gameOver(message){
+    result.innerText = message;
+    result.style.display = "block"
+    guess.setAttribute("disabled","true")
+    submitBtn.removeEventListener("click", handleSubmit);
+}
+
+
+//main
+
+let curretWord = getRandomWord();
+console.log(curretWord);
+let guessCount = 0;
+submitBtn.addEventListener("click", handleSubmit)
