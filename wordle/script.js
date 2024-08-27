@@ -73,18 +73,15 @@ function handleSubmit(){
     
     let matchedLetters = 0;
     let row = guessCount-1;
-    
     guess.value = ""
 
     for(let i=0 ;i<5; i++){
         if(guessedWord[i] === curretWord[i]){
-            console.log("there is a match at index " + i)
             gameBox.children[row].children[i].classList.add("letter-in-correct-position")
             gameBox.children[row].children[i].innerText = guessedWord[i].toLocaleUpperCase()
             matchedLetters++;
         }
         else if(curretWord.includes(guessedWord[i])){
-            console.log("someletter in guess")
             gameBox.children[row].children[i].classList.add("letter-in-word")
             gameBox.children[row].children[i].innerText = guessedWord[i].toLocaleUpperCase()
 
