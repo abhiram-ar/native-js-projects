@@ -22,28 +22,15 @@ let characeters = {
 
 
 lengthSlider.addEventListener("change",()=>{
-	console.log(lengthSlider.value)
 	selectedLength.innerText = lengthSlider.value
-	
-	console.log(includeNumbers.checked)
-	console.log(includeletters.checked)
-	console.log(includeMixedCase.checked)
-	console.log(includePuntuation.checked)
 
 	let password = ""
 	let solutionSpace = ""
-	console.log(solutionSpace)
-	if(includeNumbers.checked){
-		solutionSpace = solutionSpace.concat(characeters.numbers);
-	}
-	if (includeletters.checked){
-		solutionSpace = solutionSpace.concat(characeters.letters);
-	}
-	if(includeMixedCase.checked){
-		solutionSpace = solutionSpace.concat(characeters.letters.toLowerCase());
-	}
-	if(includePuntuation.checked)
-		solutionSpace = solutionSpace.concat(characeters.puntuation)
+
+	if(includeNumbers.checked) solutionSpace = solutionSpace.concat(characeters.numbers);
+	if (includeletters.checked) solutionSpace = solutionSpace.concat(characeters.letters);
+	if(includeMixedCase.checked) solutionSpace = solutionSpace.concat(characeters.letters.toLowerCase());
+	if(includePuntuation.checked) solutionSpace = solutionSpace.concat(characeters.puntuation)
 	
 	let solutionSpacelength = solutionSpace.length
 	for(let i=0; i<lengthSlider.value; i++){
