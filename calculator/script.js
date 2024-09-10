@@ -12,14 +12,16 @@ let operationPriority = {
     "+" : 1,
     "*" : 2,
     "/" : 2,
+    "%" : 2,
     "^" : 3
 }
 
 const associativity = {
-    '+': 'L',
-    '-': 'L',
-    '*': 'L',
-    '/': 'L',
+    '+' : 'L',
+    '-' : 'L',
+    '*' : 'L',
+    '/' : 'L',
+    '%' : 'L',
     '^': 'R'
 };
 
@@ -83,11 +85,14 @@ function solve(){
                     break;
                 case "^":
                     result = Math.pow(operant1, operant2);
-                    break
+                    break;
+                case '%':
+                    result = operant1 % operant2;
+                    break;
                 default:
                     console.log("error : invalid operation")
             }
-            
+
             stack.push(result)
         }
     })
