@@ -21,7 +21,9 @@ let characeters = {
 
 
 
-lengthSlider.addEventListener("change",()=>{
+lengthSlider.addEventListener("change", generateRandomPassword)
+
+function generateRandomPassword(){
 	selectedLength.innerText = lengthSlider.value
 
 	let password = ""
@@ -39,10 +41,13 @@ lengthSlider.addEventListener("change",()=>{
 	}
 
 	showPassword.value = password
+}
 
-})
 
 copyToClipboard.addEventListener("click", ()=>{
 	navigator.clipboard.writeText(showPassword.value)
-	alert("copyed to clipboard");
+	alert("password copied to clipboard");
 })
+
+
+generateRandomPassword()
