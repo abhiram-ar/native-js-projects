@@ -46,3 +46,6 @@ select{
     width: 22em;
 
 }
+ .hidden{
+    visibility: hidden;
+ }
