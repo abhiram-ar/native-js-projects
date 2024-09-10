@@ -1,0 +1,70 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calculator{
+    width: 22em;
+    outline: 1px red solid;
+    margin: 20% auto;
+    box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.468);
+    border-radius: 1em;
+    padding: 1em;
+} 
+
+#display{
+    display: block;
+    width: 95%;
+    margin:  auto;
+    font-size: 2em;
+    text-align: right;
+}
+
+.button-container{
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.number-pad-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+  
+}
+
+
+.number-pad-buttons{
+    padding: 1em;
+    font-size: 1em;
+    background-color: rgb(212, 229, 237);
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 2px 6px -3px grey;
+}
+
+
+.operations-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.operation{
+    padding: 0.5em 0.8em;
+    font-size: 1em;
+    background-color: #dc7394;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0px 2px 6px -3px grey;
+    color: white;
+}
+
+.number-pad-buttons:active, .operation:active{
+    scale: 0.9;
+}
