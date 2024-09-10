@@ -10,7 +10,7 @@
     <div class="card">
         <h1>Password Generator</h1>
         <div class="generated-password-container">
-            <input type="text">
+            <input type="text" value="2fsdfsf21">
             <button >Copy Password</button>
         </div>
         
@@ -23,7 +23,35 @@
             <input type="range" min="6" max="64" id="password-length" value="18">
             <p id="selected-length">9</p>
         </div>
+
+        <input type="checkbox" id="include-numbers"><label for="include-numbers">Include Numbers</label>
+        <input type="checkbox" id="include-letters"><label for="include-numbers">Include Letters</label>
+        <input type="checkbox" id="include-mixed-case"><label for="include-number">Include Mixed Case</label>
+        <input type="checkbox" id="include-punctuation"><label for="include-number">Include Puntuation</label>
         
+    </div>
+    <div class="info-container">
+        <div class="weak-passwords">
+            <h3>Do you use any of these weak passwords</h3>
+            <ul>
+                <li>Password</li>
+                <li>123456</li>
+                <li>Qwerty</li>
+                <li>Your child's name</li>
+                <li>I always use the same password</li>
+            </ul>
+        </div>
+
+        <div class="explanations">
+            <h3>Why are those password weak?</h3>
+            <ul>
+                <li>They're easy to guess or crack.
+                    Really easy! </li>
+                <li>If one of your logins is
+                    compromised, a hacker then has
+                    access to all your services.</li>
+            </ul>
+        </div>
     </div>
 
     <script src="script.js"></script>

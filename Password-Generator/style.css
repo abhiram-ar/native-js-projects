@@ -1,4 +1,70 @@
-/* Add your styles here */
 body {
-	font-family: Arial, sans-serif;
+	background-image: url("https://ik.imagekit.io/d9mvewbju/Course/BigbinaryAcademy/yellow-container-background_O_HTT_hh3.avif");
+	background-size: 200vw;
+}
+
+.card{
+	width: 50em ;
+	background-color: wheat;
+	margin: 2em auto;
+	padding: 1em;
+	text-align: center;
+	border-radius: 1em;
+	box-shadow: 0px 1px 10px grey;
+	font-family: sans-serif;
+}
+
+
+
+.generated-password-container{
+	background-color: gainsboro;
+	height: 3em;
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+	align-items: center;
+
+	& input, input:focus {
+		background-color: gainsboro;
+		border: none;
+		width: 30em;
+		padding: 1em;
+		outline:none;
+		font-size: 1.2em;
+		
+	}
+
+	& button {
+		background-color: #4cb050;
+		border: none;
+		padding: 0.7em 1em;
+		border-radius: 0.5em;
+		color: white;
+	}
+
+} 
+
+.card > p{
+	text-align: left;
+}
+
+.length-selection-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1em;
+}
+
+
+.info-container{
+	width: 40em;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	font-family: sans-serif;
+	justify-content: center;
+}
+
+li{
+	margin: 1em 0;
 }
