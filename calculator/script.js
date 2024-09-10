@@ -29,7 +29,8 @@ function addToDisplay(char){
 
 function solve(){
     //edge case : final operant
-    parseOperant()
+    let finalOperant = parseOperant()
+    expression.push(finalOperant);
 
     console.log(expression)
     
@@ -94,6 +95,9 @@ function solve(){
 
     let answer = stack.pop()
     display.value = answer
+    expression = []
+    expression.push(answer)
+    console.log(expression)
     console.log("solved : "  + answer)
 }
 
@@ -105,7 +109,6 @@ function clearDisplay(){
 
 function parseOperant(){
     let operant = parseFloat(display.value)
-    expression.push(operant);
     display.value = ""
     return operant
 }
@@ -126,8 +129,8 @@ result.addEventListener("click", ()=>{
 operations.addEventListener("click", (event)=>{
     if(event.target.dataset.operation === undefined) return;
 
-    let operant = parseOperant()
-
+    let operant = parseOperant();
+    expression.push(operant);
     expression.push(event.target.dataset.operation);
     console.log((expression))
 })
