@@ -13,7 +13,6 @@ async function getCountryList(){
 
 getCountryList()
     .then((countryList)=>{
-        console.log(countryList)
         countryList.sort((a, b)=>{
             if(a.name.common >= b.name.common) return 1;
             else return -1
