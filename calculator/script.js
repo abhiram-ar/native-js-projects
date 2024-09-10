@@ -87,7 +87,7 @@ function solve(){
                 default:
                     console.log("error : invalid operation")
             }
-
+            
             stack.push(result)
         }
     })
@@ -96,8 +96,6 @@ function solve(){
     let answer = stack.pop()
     display.value = answer
     expression = []
-    expression.push(answer)
-    console.log(expression)
     console.log("solved : "  + answer)
 }
 
