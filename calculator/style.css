@@ -7,7 +7,7 @@ input::-webkit-inner-spin-button {
 .calculator{
     width: 22em;
     outline: 1px red solid;
-    margin: 20% auto;
+    margin: 10vh auto;
     box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.468);
     border-radius: 1em;
     padding: 1em;
@@ -15,10 +15,12 @@ input::-webkit-inner-spin-button {
 
 #display{
     display: block;
+    padding: 0.5em;
     width: 95%;
     margin:  auto;
     font-size: 2em;
     text-align: right;
+    box-sizing: border-box;
 }
 
 .button-container{
