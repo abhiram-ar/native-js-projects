@@ -43,7 +43,6 @@ lengthSlider.addEventListener("change",()=>{
 })
 
 copyToClipboard.addEventListener("click", ()=>{
-	let password = showPassword.value
-	navigator.clipboard.writeText(password)
+	navigator.clipboard.writeText(showPassword.value)
 	alert("copyed to clipboard");
 })
