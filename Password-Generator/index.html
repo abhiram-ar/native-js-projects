@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Password Generator</h1>
+        <div class="generated-password-container">
+            <input type="text">
+            <button >Copy Password</button>
+        </div>
+        
+        <p>Use the slider, and select from the options, below, to lengthen your password and strengthen your
+            security. Password Length (6-64)
+        </p>
+        <label for="password-length">Total Characters: </label>
+        <input type="range" min="6" max="64" id="password-length" value="18">
+        <p id="selected-length">9</p>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
