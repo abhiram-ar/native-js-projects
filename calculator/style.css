@@ -15,7 +15,7 @@ input::-webkit-inner-spin-button {
 
 #display{
     display: block;
-    padding: 0.5em;
+    padding: 0.2em 0.5em ;
     width: 95%;
     margin:  auto;
     font-size: 2em;
