@@ -359,7 +359,7 @@ const data = [
 const newsContainer = document.querySelector(".news-container");
 const showMore = document.getElementById("show-more")
 const searchBar = document.getElementById("search");
-
+const filterByTopics = document.querySelector(".topics")
 
 function renderList(list){
     for (let i=0; i<list.length; i++){
@@ -397,33 +397,54 @@ searchBar.addEventListener("change", (event)=>{
     let query = event.target.value
     console.log(query)
 
-
     if(query.length === 0){
         newsContainer.innerHTML = ""
         renderList(data.slice(0,7))
         return
     }
 
-
-    
     let matchedNews = data.filter(news =>{
         return news.title.includes(query)
     })
 
     if(matchedNews.length > 0){
         newsContainer.innerHTML = ""
-        
         let highlightedNews = matchedNews.map(news =>{
             return { 
                 ...news,
                 title: news.title.replace(query, `<span class="highlight">${query}</span>`)
             }
         })
-        
         renderList(highlightedNews)
     }
         
     console.log(highlightedNews)
+})
+
+filterByTopics.addEventListener("click", (event)=>{
+    //handling event for container
+    if(event.target.id === "") return
+
+    //highlight the selected topic
+    let currentHighlightedTopic = document.querySelector(".selected");
+    currentHighlightedTopic.classList.remove("selected")
+    event.target.classList.add("selected")
+
+    //filer main-logic
+    let topic = event.target.id
+    console.log(topic)
+    if(topic === 'all') {
+        newsContainer.innerHTML = ""
+        renderList(data.slice(0,7))
+        return
+    }
+
+    let filterdNews = data.filter(news =>{
+        return news.category === topic
+    })
+
+    newsContainer.innerHTML = ""
+    renderList(filterdNews)
 
 })
 
