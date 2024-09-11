@@ -30,7 +30,7 @@ p{
         border-radius: 0.2em;
     }
 
-    & #selected{
+    & .selected{
         background-color: black;
         color: whitesmoke;
 
@@ -50,6 +50,7 @@ p{
     outline: 1px red solid;
     border: 2px gray solid;
     padding: 1.5em;
+    height:auto;
     
 }
 
@@ -69,6 +70,13 @@ p{
     font-size: 1em;
 }
 
+.hidden{
+    visibility: hidden;
+}
+
+.highlight{
+    color:red
+}
 
 
 
