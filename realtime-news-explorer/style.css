@@ -3,14 +3,15 @@
 }
 
 .content{
-    margin: 4em;
+    width: 80vw;
+    margin: 4em auto;
 }
 
 #search{
-    width: 80%;
+    width: 100%;
     display: block;
-
-    padding: 0.5em 2em;
+    padding: 1em 2em;
+    box-sizing: border-box;
     font-size: 1.125em;
 }
 
@@ -28,6 +29,7 @@ p{
         color: black;
         padding: 0.4em 1em;
         border-radius: 0.2em;
+        cursor: pointer;
     }
 
     & .selected{
@@ -41,13 +43,12 @@ p{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1vw;
-    margin:auto;
+    gap: 2em;
+    margin: 3em auto;
 }
 
 .news{
-    width: 39vw;
-    outline: 1px red solid;
+    width: 42%;
     border: 2px gray solid;
     padding: 1.5em;
     height:auto;
@@ -55,7 +56,7 @@ p{
 }
 
 .news:nth-child(1){
-    width: 82vw;
+    width: 90%;
 }
 
 

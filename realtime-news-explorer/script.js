@@ -361,6 +361,8 @@ const showMore = document.getElementById("show-more")
 const searchBar = document.getElementById("search");
 const filterByTopics = document.querySelector(".topics")
 
+
+
 function renderList(list){
     for (let i=0; i<list.length; i++){
         const newNews = document.createElement("div");
@@ -387,13 +389,21 @@ function renderList(list){
 }
 
 
+function delay(ms){
+    return new Promise(resolve =>{setTimeout(resolve,ms)})
+}
+
+
 showMore.addEventListener("click", (event)=>{
     renderList(data)
     event.target.classList.add("hidden")
     
 })
 
-searchBar.addEventListener("change", (event)=>{
+
+searchBar.addEventListener("input",async (event)=>{
+    await delay(1000)
+
     let query = event.target.value
     console.log(query)
 
@@ -417,8 +427,10 @@ searchBar.addEventListener("change", (event)=>{
         })
         renderList(highlightedNews)
     }
+    else{
+        newsContainer.innerHTML = "no match found!"
+    }
         
-    console.log(highlightedNews)
 })
 
 filterByTopics.addEventListener("click", (event)=>{
