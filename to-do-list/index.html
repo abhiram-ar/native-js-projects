@@ -16,13 +16,15 @@
         <input id="input-task-data" type="text" placeholder="Add your to-do task..." />
         <div class="options">
             <div>
-                <input type="date"  id="input-task-date" value="" placeholder="none"><label for="input-task-data">Today</label>
+                <input type="date"  id="input-task-date" value="" placeholder="none"><label id="date-label" for="input-task-data">Today</label>
                 <input type="Time" id="input-task-time" value=""><label for="input-task-data">Set time</label>
             </div>
             <button id="save-to-do" class="">Save</button>
         </div>
       </div>
 
+      <div class="no-list">
+      </div>
 
       <div class="task-container">
         
@@ -35,14 +37,14 @@
                 </div>
                 <div class="task-info">    
                     <input type="time">
-                    <select value="">
+                    <select>
                         <option value="edit">Edit</option>
                         <option value="delete">Delete</option>
                     </select>
                 </div>
             </div>
             
-            <div class="task-item" id="task-id11">
+            <div class="task-item checked" id="Timedate" >
                 <div>
                     <input type="checkbox"><label for="task-id1">Take snowy out for a walk</label>
                 </div>
