@@ -15,6 +15,14 @@ body{
     border-radius: 0.25rem;
 }
 
+.empty-todo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    color: grey;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -41,15 +49,27 @@ header{
         font-weight: bold;
     }
 
-    div{
+    .options{
         margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+
+        #save-to-do{
+            background-color: transparent;
+            border: none;
+            color:cornflowerblue;
+            font-weight:bold;
+        }
+
+        .transparent{
+            color: white !important;
+        }
     }
 
     #input-task-date {
         border: none;
         width: 1.2rem;
-        
-        
     }
 
     #input-task-time{
@@ -61,9 +81,57 @@ header{
         font-size: 0.8rem;
         color: grey;
     }
-
-
 }
 
 
 
+.task-container{
+    margin: 2rem 1rem;
+}
+
+.task-group{
+    margin: 1.75rem 0;
+
+    & h3{
+        margin: 0.25rem 0;
+    }
+}
+
+
+.task-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0.25rem;
+    border-bottom: 1px rgb(229, 229, 229) solid;
+
+    & input[type="checkbox"]{
+        border-radius: 100em;
+    }
+
+    & .checked{
+        color:rgb(190, 190, 190)
+    }
+
+    & .task-info{
+        flex-shrink: 0;
+
+        & input[type="time"]{
+            width: 4rem;
+            border: none;
+        }
+    }
+}
+
+.task-group .add-task{
+    padding: 0.8rem 0;
+    color:rgb(190, 190, 190);
+
+    & span{
+        padding-left: 0.5rem;
+        font-size: 1rem;
+        color: skyblue;
+        width: 3rem;
+    }
+
+
+}
