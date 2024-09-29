@@ -1,3 +1,10 @@
+//todo list
+// 1. reafactor code
+// 2. add edit task
+// 3. inline add task
+
+
+
 const search = document.getElementById('search');
 const title = document.getElementById('input-task-data');
 const date = document.getElementById('input-task-date');
@@ -95,44 +102,46 @@ function renderNewTask(task){
             createNewTaskGroupAndAddTask(task);
         }
         else{
-
+            let panel = taskGroup.querySelector(".panel")
+            
             let newTask = document.createElement('div');
-            newTask.className = 'task-item';
-            newTask.id = task.id;
+                newTask.className = 'task-item';
+                newTask.id = task.id;
 
             let checkboxDiv = document.createElement('div');
             let checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = task.id + "c";
-            checkbox.checked = task.checked;
-            checkboxDiv.append(checkbox);
+                checkbox.type = 'checkbox';
+                checkbox.id = task.id + "c";
+                checkbox.checked = task.checked;
+                checkboxDiv.append(checkbox);
             let label = document.createElement('label');
-            label.htmlFor = task.id + "c";
-            label.innerText = task.title;
-            label.className = task.checked ? "checked" : "";
+                label.htmlFor = task.id + "c";
+                label.innerText = task.title;
+                label.className = task.checked ? "checked" : "";
             checkboxDiv.appendChild(label);
 
             newTask.appendChild(checkboxDiv);
 
             let taskInfo = document.createElement('div');
-            taskInfo.className = 'task-info';
+                taskInfo.className = 'task-info';
             let timeInput = document.createElement('input');
-            timeInput.type = 'time';
-            timeInput.value = task.time;
+                timeInput.type = 'time';
+                timeInput.value = task.time;
             let select = document.createElement('select');
             let editOption = document.createElement('option');
-            editOption.value = 'edit';
-            editOption.innerText = 'Edit';
+                editOption.value = 'edit';
+                editOption.innerText = 'Edit';
             let deleteOption = document.createElement('option');
-            deleteOption.value = 'delete';
-            deleteOption.innerText = 'Delete';
+                deleteOption.value = 'delete';
+                deleteOption.innerText = 'Delete';
             
             select.appendChild(editOption);
             select.appendChild(deleteOption);
             taskInfo.appendChild(timeInput);
             taskInfo.appendChild(select);
             newTask.appendChild(taskInfo);
-            taskGroup.appendChild(newTask);
+            panel.appendChild(newTask);
+            taskGroup.appendChild(panel);
 
             checkbox.addEventListener('change', (e) => {
                 console.log(e.target.checked);
@@ -159,8 +168,8 @@ function renderNewTask(task){
                 else if(e.target.value === 'delete'){
                     console.log('delete');
                     let taskGroup = document.getElementById(task.date);
-                    taskGroup.removeChild(newTask);
-                    if(taskGroup.children.length === 1){
+                    panel.removeChild(newTask);
+                    if(panel.children.length === 0){
                         taskContainer.removeChild(taskGroup);
                     }
                     let index = laskList.findIndex((item) => item.id === task.id);
@@ -186,7 +195,13 @@ function createNewTaskGroupAndAddTask(task){
     let groupName = document.createElement('h2');
     if(task.date === getCurrentDate()) groupName.innerHTML = "Today";
     else groupName.innerHTML = getFormattedDate(task.date);
+    groupName.classList.add('accordion');
     newTaskGroup.appendChild(groupName);
+
+    //create panel
+    let panel = document.createElement('div');
+    panel.className = 'panel';
+    newTaskGroup.appendChild(panel);
 
     // render new task details
     let newTask = document.createElement('div');
@@ -195,38 +210,41 @@ function createNewTaskGroupAndAddTask(task){
 
     let checkboxDiv = document.createElement('div');
     let checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.id = task.id + "c";
-    checkbox.checked = task.checked;
-    checkboxDiv.append(checkbox);
+        checkbox.type = 'checkbox';
+        checkbox.id = task.id + "c";
+        checkbox.checked = task.checked;
+        checkboxDiv.append(checkbox);
     let label = document.createElement('label');
-    label.htmlFor = task.id + "c";
-    label.innerText = task.title;
-    label.className = task.checked ? "checked" : "";
-    checkboxDiv.appendChild(label);
+        label.htmlFor = task.id + "c";
+        label.innerText = task.title;
+        label.className = task.checked ? "checked" : "";
+        checkboxDiv.appendChild(label);
     newTask.appendChild(checkboxDiv);
 
     let taskInfo = document.createElement('div');
-    taskInfo.className = 'task-info';
+        taskInfo.className = 'task-info';
     let timeInput = document.createElement('input');
-    timeInput.type = 'time';
-    timeInput.value = task.time;
+        timeInput.type = 'time';
+        timeInput.value = task.time;
     let select = document.createElement('select');
     let editOption = document.createElement('option');
-    editOption.value = 'edit';
-    editOption.innerText = 'Edit';
+        editOption.value = 'edit';
+        editOption.innerText = 'Edit';
     let deleteOption = document.createElement('option');
-    deleteOption.value = 'delete';
-    deleteOption.innerText = 'Delete';
+        deleteOption.value = 'delete';
+        deleteOption.innerText = 'Delete';
     
     select.appendChild(editOption);
     select.appendChild(deleteOption);
     taskInfo.appendChild(timeInput);
     taskInfo.appendChild(select);
     newTask.appendChild(taskInfo);
-    newTaskGroup.appendChild(newTask);
+    panel.appendChild(newTask);
+    newTaskGroup.appendChild(panel);
     taskContainer.appendChild(newTaskGroup);
 
+
+    //add event listener to checkbox
     checkbox.addEventListener('change', (e) => {
         console.log(e.target.checked);
         if(e.target.checked){
@@ -243,6 +261,17 @@ function createNewTaskGroupAndAddTask(task){
         }
     }); 
 
+    //accordion
+    groupName.addEventListener("click", function(event) {
+        event.target.classList.toggle("active");
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        }
+        else {
+            panel.style.display = "block";
+        }    
+    });
+
     //delete and edit task
     select.addEventListener('change', (e) => {
         if(e.target.value === 'edit'){
@@ -251,17 +280,17 @@ function createNewTaskGroupAndAddTask(task){
         else if(e.target.value === 'delete'){
             console.log('delete');
             let taskGroup = document.getElementById(task.date);
-            taskGroup.removeChild(newTask);
-            if(taskGroup.children.length === 1){
+            panel.removeChild(newTask);
+            if(panel.children.length === 0){
                 taskContainer.removeChild(taskGroup);
             }
             let index = laskList.findIndex((item) => item.id === task.id);
             laskList.splice(index, 1);
             if(laskList.length === 0){
-                noList.innerHTML += `<div class="empty-todo">
-                        <img src="empty.png">
-                    </div>`;
-            }
+            noList.innerHTML += `<div class="empty-todo">
+                <img src="empty.png">
+            </div>`;
+    }
             localStorage.setItem('taskList', JSON.stringify(laskList));
         }
     });

@@ -92,10 +92,10 @@ header{
 }
 
 .task-group{
+    background-color: #eeeeee46;
     margin: 1.75rem 0;
-
     & h3{
-        margin: 0.25rem 0;
+        
     }
 }
 
@@ -103,7 +103,7 @@ header{
 .task-item{
     display: flex;
     justify-content: space-between;
-    padding: 0.75rem 0.25rem;
+    padding: 0.5rem 0.25rem 1rem;
     border-bottom: 1px rgb(229, 229, 229) solid;
 
     & input[type="checkbox"]{
@@ -118,14 +118,14 @@ header{
         flex-shrink: 0;
 
         & input[type="time"]{
-            width: 4rem;
+            background-color: #eeeeee46;
             border: none;
         }
     }
 }
 
 .task-group .add-task{
-    padding: 0.8rem 0;
+    padding: 0.5rem 0;
     color:rgb(190, 190, 190);
 
     & span{
@@ -138,29 +138,24 @@ header{
 
 }
 
-
-/* Style the buttons that are used to open and close the accordion panel */
+/*accordion*/
 .accordion {
-    background-color: #eee;
-    color: #444;
+    border-radius: 0.25rem;
+    background-color: #eeeeee83 !important;
     cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
+    padding: 0.5em 1em;
     border: none;
+    text-align: left;
     outline: none;
-    transition: 0.4s;
+    transition: 1s;
   }
   
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .accordion:hover {
-    background-color: #ccc;
+.active, .accordion:hover {
+    background-color: #dddddd73; 
   }
-  
-  /* Style the accordion panel. Note: hidden by default */
-  .panel {
+
+.panel {
     padding: 0 18px;
-    background-color: white;
     display: none;
     overflow: hidden;
   }
