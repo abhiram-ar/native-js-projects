@@ -150,6 +150,20 @@ header{
     outline: none;
     transition: 1s;
   }
+
+.accordion::before {
+    content: "⤊ "; 
+    color: blue;
+    font-size: 1.5rem;
+    margin-left:-0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+.accordion.active::before {
+    content: "⤋ "; 
+    transition: all 0.5s;
+  }
   
 .active, .accordion:hover {
     background-color: #dddddd1a; 
