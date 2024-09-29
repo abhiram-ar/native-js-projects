@@ -194,7 +194,7 @@ function createNewTaskGroupAndAddTask(task){
         
     let groupName = document.createElement('h2');
     if(task.date === getCurrentDate()) groupName.innerHTML = "Today";
-    else groupName.innerText = getFormattedDate(task.date);
+    else groupName.innerText =  getFormattedDate(task.date);
     groupName.classList.add('accordion');
     newTaskGroup.appendChild(groupName);
     
@@ -202,6 +202,7 @@ function createNewTaskGroupAndAddTask(task){
     //create panel
     let panel = document.createElement('div');
     panel.className = 'panel';
+    panel.style.display = "block";
     newTaskGroup.appendChild(panel);
 
     // render new task details

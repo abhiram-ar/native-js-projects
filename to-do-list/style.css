@@ -152,18 +152,18 @@ header{
   }
 
 .accordion::before {
-    content: "⤊ "; 
-    color: blue;
+    content: "⤋ "; 
+    color: grey;
     font-size: 1.5rem;
-    margin-left:-0.5rem;
+    margin-left: -0.5rem;
     align-items: center;
     margin-bottom: 1rem;
-  }
+
+}
 
 .accordion.active::before {
-    content: "⤋ "; 
-    transition: all 0.5s;
-  }
+    content: "⤊ "; 
+}
   
 .active, .accordion:hover {
     background-color: #dddddd1a; 
@@ -171,6 +171,6 @@ header{
 
 .panel {
     padding: 0 18px;
-    display: none;
+    display: block;
     overflow: hidden;
   }
