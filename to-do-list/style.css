@@ -92,10 +92,11 @@ header{
 }
 
 .task-group{
-    background-color: #eeeeee46;
+    background-color: #eeeeee1d;
     margin: 1.75rem 0;
+    border-radius: 0.25rem;
     & h3{
-        
+        background-color: gray;
     }
 }
 
@@ -141,7 +142,7 @@ header{
 /*accordion*/
 .accordion {
     border-radius: 0.25rem;
-    background-color: #eeeeee83 !important;
+    background-color: #eeeeee1d !important;
     cursor: pointer;
     padding: 0.5em 1em;
     border: none;
@@ -151,7 +152,7 @@ header{
   }
   
 .active, .accordion:hover {
-    background-color: #dddddd73; 
+    background-color: #dddddd1a; 
   }
 
 .panel {
